@@ -1,6 +1,11 @@
 # screenshot.js
 Take screenshot with JS
 
+## Example
+See: https://rawcdn.githack.com/amiad/screenshot.js/master/index.html
+
+![example gif](https://raw.githubusercontent.com/amiad/screenshot.js/master/example.gif)
+
 ## Installation
 * If you want to load script locally download its ([here](https://raw.githubusercontent.com/amiad/screenshot.js/master/screenshot.js)).
 * Load the script in the header
