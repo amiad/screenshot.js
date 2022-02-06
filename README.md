@@ -33,3 +33,6 @@ Firefox 66, Chrome 72, Edge 79, Opera 60, Safari 13.
 Mobile not supported!
 
 See [CanIUSe](https://caniuse.com/?search=getDisplayMedia) for more details.
+
+## Licnese
+GPL
