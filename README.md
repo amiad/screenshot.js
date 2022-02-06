@@ -1,5 +1,5 @@
 # screenshot.js
-Take screenshot with JS
+Take real screenshot with JS
 
 ## Example
 See: https://rawcdn.githack.com/amiad/screenshot.js/master/index.html
