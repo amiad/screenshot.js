@@ -52,7 +52,7 @@ class Screenshot {
             else {
                 sound = this.args.sound;
             }
-            new Audio(this.args.sound).play();
+            new Audio(sound).play();
         }
         
         setTimeout(() => {
