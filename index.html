@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="screenshot.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+    <h1>Screenshot Example</h1>
+    <button id="button">
+        Take Screenshot
+    </button>
+<script>
+document.getElementById('button').addEventListener('click', () => {
+    new Screenshot({success: img => {
+        document.body.append(img);
+    }});
+});
+</script>
+</body>
+</html>
