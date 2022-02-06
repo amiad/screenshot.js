@@ -22,7 +22,10 @@ class Screenshot {
                     this.takeScreenshot();
                 })
                 .catch((e) => {
-                    console.log('You can allow screen share');
+                    //console.log('You need to allow screen share');
+                    if (typeof this.args.noPremit == 'function'){
+                        this.args.noPremit();
+                    }
                 });
             }
             else {
@@ -30,7 +33,10 @@ class Screenshot {
             }
         }
         else {
-            console.log('You\'re browser not support screen share'); 
+            //console.log('You\'re browser not support screen share');
+            if (typeof this.args.noSupport == 'function'){
+                this.args.noSupport();
+            }
         }
     }
 

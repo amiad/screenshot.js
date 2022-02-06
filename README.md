@@ -23,6 +23,10 @@ new Screenshot({success: img => {
  ```
  Your user need to allow the action and to select the screen, window or tab to share (tab support in Chrome only).
 
+### more argurments
+* `noSupport` - callback for unsupport browser.
+* `noPremit` - callback that would run if the user did not confirm the screen share.
+
 ## Supported Browsers
 Firefox 66, Chrome 72, Edge 79, Opera 60, Safari 13.
 
