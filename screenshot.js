@@ -1,4 +1,6 @@
 var screenshotVideo;
+const defaultSound = 'https://github.com/amiad/screenshot.js/raw/master/assets/cam-click.mp3';
+
 class Screenshot {
     constructor(args){
         this.args = args;
@@ -41,6 +43,17 @@ class Screenshot {
     }
 
     takeScreenshot(){
+
+        if (this.args.sound) {
+            let sound;
+            if (this.args.sound === true){
+                sound = defaultSound;
+            }
+            else {
+                sound = this.args.sound;
+            }
+            new Audio(this.args.sound).play();
+        }
         
         setTimeout(() => {
             const canvas = document.createElement("canvas");
