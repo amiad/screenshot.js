@@ -38,7 +38,7 @@ Mobile not supported!
 See [CanIUSe](https://caniuse.com/?search=getDisplayMedia) for more details.
 
 ## Donate
-<a href="https://paypal.me/amiad/"><img src="https://github.com/andreostrovsky/donate-with-paypal/raw/master/blue.svg" height="40" alt-"donate"></a>  
+[![donate](https://github.com/everdrone/coolbadge/raw/master/badges/Paypal/Coffee/Blue/Short.png)](https://paypal.com/amiad)
 
 You like it? Please donate to me so I can continue developing.
 
