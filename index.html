@@ -16,9 +16,18 @@
     </button>
 <script>
 document.getElementById('button').addEventListener('click', () => {
-    new Screenshot({success: img => {
-        document.body.append(img);
-    }});
+    new Screenshot({
+        success: img => {
+            document.body.append(img);
+        },
+        noPremit: () => {
+            alert('Please Allow!');
+        },
+        noSupport: () => {
+            alert("You're browser not support screen share");
+        },
+        sound: true,
+    });
 });
 </script>
 </body>
