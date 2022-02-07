@@ -13,6 +13,8 @@ class Screenshot {
                 screenshotVideo.style.position = 'absolute';
                 screenshotVideo.style.marginBottom = screenshotVideo.clientHeight * -1 + 'px';
                 document.body.appendChild(screenshotVideo);
+
+                screenshotVideo.addEventListener('canplay', () => {this.takeScreenshot();});
             }
             if (! screenshotVideo.srcObject || args.askNewShare){
                 if (screenshotVideo.srcObject){
@@ -25,8 +27,6 @@ class Screenshot {
                 })
                 .then((record) => {
                     screenshotVideo.srcObject = record;
-                    
-                    this.takeScreenshot();
                 })
                 .catch((e) => {
                     //console.log('You need to allow screen share');
@@ -53,27 +53,25 @@ class Screenshot {
             this.playSound();
         }
 
-        setTimeout(() => {
-            const canvas = document.createElement("canvas");
-            canvas.width = screenshotVideo.clientWidth;
-            canvas.height = screenshotVideo.clientHeight;
-            canvas.getContext('2d').drawImage(screenshotVideo, 0, 0, canvas.width, canvas.height);
-            const img = document.createElement("img");
-            img.src = canvas.toDataURL();
+        const canvas = document.createElement("canvas");
+        canvas.width = screenshotVideo.clientWidth;
+        canvas.height = screenshotVideo.clientHeight;
+        canvas.getContext('2d').drawImage(screenshotVideo, 0, 0, canvas.width, canvas.height);
+        const img = document.createElement("img");
+        img.src = canvas.toDataURL();
 
-            if (this.args.width) {
-                img.width = this.args.width;
-            }
-            if (this.args.height) {
-                img.height = this.args.height;
-            }
+        if (this.args.width) {
+            img.width = this.args.width;
+        }
+        if (this.args.height) {
+            img.height = this.args.height;
+        }
 
-            img.addEventListener('load', () => {
-                if (typeof this.args.success == 'function'){
-                    this.args.success(img);
-                }
-            });
-        }, 100);
+        img.addEventListener('load', () => {
+            if (typeof this.args.success == 'function'){
+                this.args.success(img);
+            }
+        });
     }
 
     playSound(){
