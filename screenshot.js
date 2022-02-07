@@ -63,6 +63,13 @@ class Screenshot {
             const img = document.createElement("img");
             img.src = canvas.toDataURL();
 
+            if (this.args.width) {
+                img.width = this.args.width;
+            }
+            if (this.args.height) {
+                img.height = this.args.height;
+            }
+
             img.addEventListener('load', () => {
                 if (typeof this.args.success == 'function'){
                     this.args.success(img);

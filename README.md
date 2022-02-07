@@ -29,6 +29,8 @@ new Screenshot({success: img => {
 * `sound` - play sound when taking screenshot.
   * `true` - default sound
   * `url` - custom sound (example: `'https://site.my/sound.mp3'`)
+* `height` - image height 
+* `width` - image width
 
 ## Supported Browsers
 Firefox 66, Chrome 72, Edge 79, Opera 60, Safari 13.
