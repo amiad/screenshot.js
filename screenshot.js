@@ -14,7 +14,12 @@ class Screenshot {
                 screenshotVideo.style.marginBottom = screenshotVideo.clientHeight * -1 + 'px';
                 document.body.appendChild(screenshotVideo);
             }
-            if (! screenshotVideo.srcObject){
+            if (! screenshotVideo.srcObject || args.askNewShare){
+                if (screenshotVideo.srcObject){
+                    let tracks =  screenshotVideo.srcObject.getTracks();
+                    tracks.forEach(track => track.stop());
+                    screenshotVideo.srcObject = null;
+                }
                 navigator.mediaDevices.getDisplayMedia({
                     audio: false
                 })
@@ -47,7 +52,7 @@ class Screenshot {
         if (this.args.sound) {
             this.playSound();
         }
-        
+
         setTimeout(() => {
             const canvas = document.createElement("canvas");
             canvas.width = screenshotVideo.clientWidth;
