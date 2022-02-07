@@ -45,14 +45,7 @@ class Screenshot {
     takeScreenshot(){
 
         if (this.args.sound) {
-            let sound;
-            if (this.args.sound === true){
-                sound = defaultSound;
-            }
-            else {
-                sound = this.args.sound;
-            }
-            new Audio(sound).play();
+            this.playSound();
         }
         
         setTimeout(() => {
@@ -76,5 +69,16 @@ class Screenshot {
                 }
             });
         }, 100);
+    }
+
+    playSound(){
+        let sound;
+        if (this.args.sound === true){
+            sound = defaultSound;
+        }
+        else {
+            sound = this.args.sound;
+        }
+        new Audio(sound).play();
     }
 }
