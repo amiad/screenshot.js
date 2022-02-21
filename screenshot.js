@@ -16,7 +16,7 @@ class Screenshot {
 
                 screenshotVideo.addEventListener('canplay', () => {this.takeScreenshot();});
             }
-            if (! screenshotVideo.srcObject || args.askNewShare){
+            if (! screenshotVideo.srcObject || ! screenshotVideo.srcObject.active ||args.askNewShare){
                 if (screenshotVideo.srcObject){
                     let tracks =  screenshotVideo.srcObject.getTracks();
                     tracks.forEach(track => track.stop());
