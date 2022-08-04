@@ -25,7 +25,7 @@ new Screenshot({success: img => {
 
 ### optional argurments
 * `noSupport` - callback for unsupport browser.
-* `noPremit` - callback that would run if the user did not confirm the screen share.
+* `noPermit` - callback that would run if the user did not confirm the screen share.
 * `sound` - play sound when taking screenshot.
   * `true` - default sound
   * `url` - custom sound (example: `'https://site.my/sound.mp3'`)

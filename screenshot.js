@@ -30,8 +30,8 @@ class Screenshot {
                 })
                 .catch((e) => {
                     //console.log('You need to allow screen share');
-                    if (typeof this.args.noPremit == 'function'){
-                        this.args.noPremit();
+                    if (typeof this.args.noPermit == 'function'){
+                        this.args.noPermit();
                     }
                 });
             }
